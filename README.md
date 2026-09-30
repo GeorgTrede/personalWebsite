@@ -17,4 +17,4 @@ Diese Version ist eine Vorschau. Vor dem Einsatz als Hauptwebseite gegebenenfall
 
 ## GitHub Pages
 
-Ein manuell auslösbarer Workflow liegt in `.github/workflows/pages.yml`. Nach Fertigstellung der Inhalte die Dateien nach GitHub pushen, unter Settings → Pages die Quelle **GitHub Actions** auswählen und den Workflow **Publish website to GitHub Pages** starten. Der Workflow veröffentlicht nur `index.html` und `styles.css`. Es wird keine eigene Domain gesetzt; die bestehende Webseite bleibt somit unberührt. Der Workflow wurde hier noch nicht auf GitHub ausgeführt.
+Ein manuell auslösbarer Workflow liegt in `.github/workflows/pages.yml`. Die Dateien liegen bereits auf `main`. Unter Settings → Pages die Quelle **GitHub Actions** auswählen und unter Actions den Workflow **Publish website to GitHub Pages** manuell starten. Der Workflow veröffentlicht nur `index.html` und `styles.css`. Es wird keine eigene Domain gesetzt; die bestehende Webseite bleibt somit unberührt. Der Workflow wurde hier noch nicht auf GitHub ausgeführt.
