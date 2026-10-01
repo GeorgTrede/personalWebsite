@@ -32,3 +32,5 @@ Interactive Lorenz visualization: ported the equations and rho schedule from the
 Master’s thesis: user-supplied Master_TredeGeorg.pdf, title pages, abstract and conclusion (p. 61). Title: Neural Flow Operators for Solving Advection-Diffusion Systems, 2024, Physics, Heidelberg University. Summary distinguishes the estimated up-to-65× speedup in the evaluated setup from the accuracy/speed trade-off of local differential kernels. The PDF is not published; access is available upon request as instructed by the user.
 
 Bachelor’s thesis: user-supplied Trede_Bachelorthesis.pdf, title page (2 June 2022), abstract and conclusion (p. 29). Auto Alignment Toolkit for Optical Resonators, University of Münster. Summary reports 88.4% relative to the physically achievable limit, not absolute efficiency, and retains the manual resonator-locking calibration limitation. Access is available upon request; the PDF is not published.
+
+Bachelor’s thesis collaboration with the Australian National University (ANU), Canberra, explicitly requested by the user and consistent with the title-page supervision by Dr. Aaron Tranter, ANU Canberra.
