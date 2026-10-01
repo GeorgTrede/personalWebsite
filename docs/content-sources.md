@@ -16,3 +16,5 @@ Bachelor- und Masterarbeit stellt der Nutzer später bereit. Bis dahin werden ke
 The desktop and mobile forest photographs, Frisbee logo and Roboto font files are copied unchanged from the original georgtre.de assets. The Instagram URL https://www.instagram.com/georgtrede is taken from the original website. All public website text is now in English.
 
 Lab team website confirmed directly by the user: https://durstewitzlab.github.io/team/. This replaces the institutional department link in the research section.
+
+The user explicitly confirmed that their research focus includes non-autonomous systems: systems whose conditions of evolution change over time. This is included in the personal research description, independently of the paper summary.
