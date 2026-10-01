@@ -10,3 +10,7 @@ Die Forschungsbeschreibung und Paper-Zusammenfassung sind deutschsprachige Zusam
 
 LinkedIn-Profillink am 01.10.2026 direkt vom Nutzer bestätigt: https://www.linkedin.com/in/georg-trede-9484813b5/
 Bachelor- und Masterarbeit stellt der Nutzer später bereit. Bis dahin werden keine Titel oder Ergebnisse behauptet.
+
+## Original visual identity and social links
+
+The desktop and mobile forest photographs, Frisbee logo and Roboto font files are copied unchanged from the original georgtre.de assets. The Instagram URL https://www.instagram.com/georgtrede is taken from the original website. All public website text is now in English.
