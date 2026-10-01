@@ -4,7 +4,7 @@ Abgerufen am 30.09.2026:
 
 - https://georgtre.de : Physik-Doktorand an der Universität Heidelberg, Computational Physics / dynamische Systeme; die vier Projektbeschreibungen und GitHub-Link.
 - https://arxiv.org/abs/2606.22969 : Titel, Autor:innen, Einreichung am 22.06.2026, Abstract; Status **Preprint**, kein behaupteter Journalartikel.
-- https://arxiv.org/pdf/2606.22969 : Affiliations, gemeinsame Erstautorenschaft mit Charlotte Ricarda Doll, öffentliche wissenschaftliche Kontaktadresse georg.trede@zi-mannheim.de.
+- https://arxiv.org/pdf/2606.22969 : Affiliations, gemeinsame Erstautorenschaft mit Charlotte Ricarda Doll, öffentliche wissenschaftliche Kontaktadresse (inzwischen durch die vom Nutzer gewünschte persönliche Adresse ersetzt).
 
 Die Forschungsbeschreibung und Paper-Zusammenfassung sind deutschsprachige Zusammenfassungen des Abstracts. Die Zugehörigkeit zur Abteilung für Theoretische Neurowissenschaften am ZI Mannheim folgt aus dem Paper. Die offizielle Abteilungsseite wurde ebenfalls geprüft und direkt verlinkt: https://www.zi-mannheim.de/forschung/abteilungen-ags-institute/theoret-neurowissenschaften.html (Leitung: Prof. Dr. Daniel Durstewitz).
 
@@ -24,3 +24,5 @@ The user subsequently selected the lab homepage, https://durstewitzlab.github.io
 The user confirmed their passion for scouting (https://pfadfinder-hd.de), unicycle hockey through Heidelberg University’s Hochschulsport, spending time outdoors and reading. They requested hausmates.de and pfadfinder-hd.de in the project archive and confirmed building the scouting website. No additional functionality is claimed for hausmates.de.
 
 The user described hausmates.de as an organisational tool for sharehouses, covering household chore distribution, shared expenses and a shared shopping list.
+
+The user selected gt04(at)duck.com as the public contact address, with mailto:gt04@duck.com as its functional email link.
