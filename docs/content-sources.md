@@ -8,5 +8,5 @@ Abgerufen am 30.09.2026:
 
 Die Forschungsbeschreibung und Paper-Zusammenfassung sind deutschsprachige Zusammenfassungen des Abstracts. Die Zugehörigkeit zur Abteilung für Theoretische Neurowissenschaften am ZI Mannheim folgt aus dem Paper. Die offizielle Abteilungsseite wurde ebenfalls geprüft und direkt verlinkt: https://www.zi-mannheim.de/forschung/abteilungen-ags-institute/theoret-neurowissenschaften.html (Leitung: Prof. Dr. Daniel Durstewitz).
 
-LinkedIn verweigert den öffentlichen Abruf (HTTP 999). Deshalb kein vermuteter Profillink; der Nutzer wurde nach dem exakten Link gefragt.
+LinkedIn-Profillink am 01.10.2026 direkt vom Nutzer bestätigt: https://www.linkedin.com/in/georg-trede-9484813b5/
 Bachelor- und Masterarbeit stellt der Nutzer später bereit. Bis dahin werden keine Titel oder Ergebnisse behauptet.
