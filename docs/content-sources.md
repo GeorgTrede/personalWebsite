@@ -22,3 +22,5 @@ The user explicitly confirmed that their research focus includes non-autonomous 
 The user subsequently selected the lab homepage, https://durstewitzlab.github.io/, as the preferred research-group link instead of the team page.
 
 The user confirmed their passion for scouting (https://pfadfinder-hd.de), unicycle hockey through Heidelberg University’s Hochschulsport, spending time outdoors and reading. They requested hausmates.de and pfadfinder-hd.de in the project archive and confirmed building the scouting website. No additional functionality is claimed for hausmates.de.
+
+The user described hausmates.de as an organisational tool for sharehouses, covering household chore distribution, shared expenses and a shared shopping list.
