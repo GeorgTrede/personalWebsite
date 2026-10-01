@@ -34,3 +34,5 @@ Master’s thesis: user-supplied Master_TredeGeorg.pdf, title pages, abstract an
 Bachelor’s thesis: user-supplied Trede_Bachelorthesis.pdf, title page (2 June 2022), abstract and conclusion (p. 29). Auto Alignment Toolkit for Optical Resonators, University of Münster. Summary reports 88.4% relative to the physically achievable limit, not absolute efficiency, and retains the manual resonator-locking calibration limitation. Access is available upon request; the PDF is not published.
 
 Bachelor’s thesis collaboration with the Australian National University (ANU), Canberra, explicitly requested by the user and consistent with the title-page supervision by Dr. Aaron Tranter, ANU Canberra.
+
+The user approved publication of the revised classic-style public CV. The approved PDF is served as assets/Georg_Trede_CV.pdf and linked from the introduction and contact section. Original private CVs and thesis PDFs remain unpublished.
