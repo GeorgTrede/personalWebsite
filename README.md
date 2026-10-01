@@ -11,7 +11,7 @@ python3 -m http.server 8000 --bind 0.0.0.0
 
 ## Inhalte
 
-Forschungsprofil und Projekte stammen aus der bisherigen Webseite. Das erste Paper und die Zugehörigkeiten sind anhand von arXiv verifiziert; siehe `docs/content-sources.md`. Bachelor- und Masterarbeit werden später ergänzt. Der LinkedIn-Profillink wurde direkt vom Nutzer bestätigt.
+Forschungsprofil und Projekte stammen aus der bisherigen Webseite. Das erste Paper und die Zugehörigkeiten sind anhand von arXiv verifiziert; siehe `docs/content-sources.md`. Die Masterarbeit ist zusammengefasst und auf Anfrage erhältlich; die Bachelorarbeit wird später ergänzt. Der LinkedIn-Profillink wurde direkt vom Nutzer bestätigt.
 
 Diese Version ist eine Vorschau. Vor dem Einsatz als Hauptwebseite gegebenenfalls erforderliche rechtliche Angaben ergänzen.
 
