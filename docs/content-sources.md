@@ -26,3 +26,5 @@ The user confirmed their passion for scouting (https://pfadfinder-hd.de), unicyc
 The user described hausmates.de as an organisational tool for sharehouses, covering household chore distribution, shared expenses and a shared shopping list.
 
 The user selected gt04(at)duck.com as the public contact address, with mailto:gt04@duck.com as its functional email link.
+
+Interactive Lorenz visualization: ported the equations and rho schedule from the user-referenced Codex task 01a0f636-ac6c-7dd0-9f5b-5a1407067804. Sigma=10, beta=8/3, rho=160 (periodic) and 180 (chaotic). JavaScript uses fixed-step RK4 (dt=0.005), a continuous trajectory, and a 30-second manual override. The visual is an illustration of time-dependent conditions, not a learned model or a result from the paper. No GIF file was copied from the local Mac.
