@@ -20,3 +20,5 @@ Lab team website confirmed directly by the user: https://durstewitzlab.github.io
 The user explicitly confirmed that their research focus includes non-autonomous systems: systems whose conditions of evolution change over time. This is included in the personal research description, independently of the paper summary.
 
 The user subsequently selected the lab homepage, https://durstewitzlab.github.io/, as the preferred research-group link instead of the team page.
+
+The user confirmed their passion for scouting (https://pfadfinder-hd.de), unicycle hockey through Heidelberg University’s Hochschulsport, spending time outdoors and reading. They requested hausmates.de and pfadfinder-hd.de in the project archive and confirmed building the scouting website. No additional functionality is claimed for hausmates.de.
