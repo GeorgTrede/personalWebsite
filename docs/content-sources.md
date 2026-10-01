@@ -14,3 +14,5 @@ Bachelor- und Masterarbeit stellt der Nutzer später bereit. Bis dahin werden ke
 ## Original visual identity and social links
 
 The desktop and mobile forest photographs, Frisbee logo and Roboto font files are copied unchanged from the original georgtre.de assets. The Instagram URL https://www.instagram.com/georgtrede is taken from the original website. All public website text is now in English.
+
+Lab team website confirmed directly by the user: https://durstewitzlab.github.io/team/. This replaces the institutional department link in the research section.
