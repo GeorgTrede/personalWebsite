@@ -18,3 +18,5 @@ The desktop and mobile forest photographs, Frisbee logo and Roboto font files ar
 Lab team website confirmed directly by the user: https://durstewitzlab.github.io/team/. This replaces the institutional department link in the research section.
 
 The user explicitly confirmed that their research focus includes non-autonomous systems: systems whose conditions of evolution change over time. This is included in the personal research description, independently of the paper summary.
+
+The user subsequently selected the lab homepage, https://durstewitzlab.github.io/, as the preferred research-group link instead of the team page.
