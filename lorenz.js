@@ -1,6 +1,7 @@
 /* Lorenz equations: sigma = 10, beta = 8/3; RK4 with dt = 0.005.
  * Periodic rho=160 → chaotic rho=180 → recovery, without resetting state.
- * Hold each regime for five seconds; manual input holds rho for 10 seconds.
+ * Hold each regime for five seconds, with one-second transitions.
+ * Manual input holds rho for 10 seconds.
  */
 (() => {
   'use strict';
@@ -14,11 +15,12 @@
   if (!ctx) return;
   document.querySelector('.lorenz-controls').hidden = false;
   const dt = 0.005, trailLength = 700, manualDelay = 10000;
-  const frameStep = 1 / 25, holdDuration = 5, cycleDuration = 2 * holdDuration;
+  const frameStep = 1 / 25, holdDuration = 5, transitionDuration = 1;
+  const cycleDuration = 2 * (holdDuration + transitionDuration);
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let state = [1, 1, 1], trail = [], rho = 160, cycle = 0;
   let running = !reducedMotion.matches, visible = false, last = null;
-  let accumulator = 0, manualUntil = 0, lastMode = '';
+  let accumulator = 0, manualUntil = 0, resumeRamp = null, lastMode = '';
 
   function derivative([x, y, z], r) {
     return [10 * (y - x), x * (r - z) - y, x * y - (8 / 3) * z];
@@ -35,8 +37,14 @@
     state = advance(state, 160);
     if (i >= 20000 - trailLength) trail.push(state);
   }
+  const smooth = u => (1 - Math.cos(Math.PI * u)) / 2;
   function automaticRho(t) {
-    return t < holdDuration ? 160 : 180;
+    if (t < holdDuration) return 160;
+    if (t < holdDuration + transitionDuration) {
+      return 160 + 20 * smooth((t - holdDuration) / transitionDuration);
+    }
+    if (t < 2 * holdDuration + transitionDuration) return 180;
+    return 180 - 20 * smooth((t - 2 * holdDuration - transitionDuration) / transitionDuration);
   }
   function showValue() {
     slider.value = rho.toFixed(1);
@@ -94,8 +102,9 @@
   slider.addEventListener('input', () => {
     rho = Number(slider.value);
     manualUntil = performance.now() + manualDelay;
-    // Resume with a full periodic phase after the manual hold expires.
+    // Return gently to order before starting a fresh five-second hold.
     cycle = 0;
+    resumeRamp = null;
     showValue(); refreshControls(performance.now());
   });
   toggle.addEventListener('click', () => {
@@ -120,9 +129,18 @@
       while (accumulator >= frameStep) {
         accumulator -= frameStep;
         if (now >= manualUntil) {
-          manualUntil = 0;
-          cycle = (cycle + frameStep) % cycleDuration;
-          rho = automaticRho(cycle);
+          if (manualUntil) {
+            manualUntil = 0;
+            resumeRamp = rho === 160 ? null : { from: rho, elapsed: 0 };
+          }
+          if (resumeRamp) {
+            resumeRamp.elapsed += frameStep;
+            rho = resumeRamp.from + (160 - resumeRamp.from) * smooth(Math.min(resumeRamp.elapsed / transitionDuration, 1));
+            if (resumeRamp.elapsed >= transitionDuration) resumeRamp = null;
+          } else {
+            cycle = (cycle + frameStep) % cycleDuration;
+            rho = automaticRho(cycle);
+          }
         }
         for (let i = 0; i < 13; i++) {
           state = advance(state, rho);
