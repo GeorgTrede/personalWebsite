@@ -27,7 +27,7 @@ The user described hausmates.de as an organisational tool for sharehouses, cover
 
 The user selected gt04(at)duck.com as the public contact address, with mailto:gt04@duck.com as its functional email link.
 
-Interactive Lorenz visualization: ported the equations and rho schedule from the user-referenced Codex task 01a0f636-ac6c-7dd0-9f5b-5a1407067804. Sigma=10, beta=8/3, rho=160 (periodic) and 180 (chaotic). JavaScript uses fixed-step RK4 (dt=0.005), a continuous trajectory, and a 30-second manual override. The visual is an illustration of time-dependent conditions, not a learned model or a result from the paper. No GIF file was copied from the local Mac.
+Interactive Lorenz visualization: ported the equations and rho schedule from the user-referenced Codex task 01a0f636-ac6c-7dd0-9f5b-5a1407067804. Sigma=10, beta=8/3, rho=160 (periodic) and 180 (chaotic). JavaScript uses fixed-step RK4 (dt=0.005), a continuous trajectory, a 5-second transition in each direction using elapsed animation time, and a 10-second manual override that resumes from the selected rho without resetting the trajectory. The visual is an illustration of time-dependent conditions, not a learned model or a result from the paper. No GIF file was copied from the local Mac.
 
 Master’s thesis: user-supplied Master_TredeGeorg.pdf, title pages, abstract and conclusion (p. 61). Title: Neural Flow Operators for Solving Advection-Diffusion Systems, 2024, Physics, Heidelberg University. Summary distinguishes the estimated up-to-65× speedup in the evaluated setup from the accuracy/speed trade-off of local differential kernels. The PDF is not published; access is available upon request as instructed by the user.
 

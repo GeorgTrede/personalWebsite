@@ -1,6 +1,6 @@
 /* Lorenz equations: sigma = 10, beta = 8/3; RK4 with dt = 0.005.
  * Periodic rho=160 → chaotic rho=180 → recovery, without resetting state.
- * Based on the user's Lorenz animation; manual input holds rho for 30 seconds.
+ * Five seconds per transition; manual input holds rho for 10 seconds.
  */
 (() => {
   'use strict';
@@ -13,11 +13,12 @@
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
   document.querySelector('.lorenz-controls').hidden = false;
-  const dt = 0.005, trailLength = 700, manualDelay = 30000;
+  const dt = 0.005, trailLength = 700, manualDelay = 10000;
+  const frameStep = 1 / 25, transitionDuration = 5, cycleDuration = 2 * transitionDuration;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let state = [1, 1, 1], trail = [], rho = 160, cycle = 0;
   let running = !reducedMotion.matches, visible = false, last = null;
-  let accumulator = 0, manualUntil = 0, resumeRamp = null, lastMode = '';
+  let accumulator = 0, manualUntil = 0, lastMode = '';
 
   function derivative([x, y, z], r) {
     return [10 * (y - x), x * (r - z) - y, x * y - (8 / 3) * z];
@@ -34,13 +35,8 @@
     state = advance(state, 160);
     if (i >= 20000 - trailLength) trail.push(state);
   }
-  const smooth = u => u * u * (3 - 2 * u);
   function automaticRho(t) {
-    if (t < 4) return 160;
-    if (t < 7) return 160 + 20 * smooth((t - 4) / 3);
-    if (t < 21) return 180;
-    if (t < 24) return 180 - 20 * smooth((t - 21) / 3);
-    return 160;
+    return 170 - 10 * Math.cos(Math.PI * t / transitionDuration);
   }
   function showValue() {
     slider.value = rho.toFixed(1);
@@ -92,13 +88,15 @@
     toggle.textContent = running ? 'Pause' : 'Play';
     toggle.setAttribute('aria-label', running ? 'Pause Lorenz animation' : 'Play Lorenz animation');
     if (!running) showMode('Animation paused');
-    else if (now < manualUntil) showMode('Manual control · auto resumes after 30 seconds');
+    else if (now < manualUntil) showMode('Manual control · auto resumes after 10 seconds');
     else showMode('Automatic cycle · move ρ to explore');
   }
   slider.addEventListener('input', () => {
     rho = Number(slider.value);
     manualUntil = performance.now() + manualDelay;
-    resumeRamp = null;
+    // Match the cycle to the selected value, keeping its direction when it resumes.
+    const phase = Math.acos((170 - rho) / 10) * transitionDuration / Math.PI;
+    cycle = cycle < transitionDuration ? phase : cycleDuration - phase;
     showValue(); refreshControls(performance.now());
   });
   toggle.addEventListener('click', () => {
@@ -120,22 +118,12 @@
       if (last !== null) accumulator += Math.min((now - last) / 1000, 0.1);
       last = now;
       let advanced = false;
-      while (accumulator >= 1 / 25) {
-        accumulator -= 1 / 25;
+      while (accumulator >= frameStep) {
+        accumulator -= frameStep;
         if (now >= manualUntil) {
-          if (manualUntil) {
-            // Return gently to the start of the automatic sequence, never reset the orbit.
-            resumeRamp = { from: rho, elapsed: 0 };
-            manualUntil = 0; cycle = 0;
-          }
-          if (resumeRamp) {
-            resumeRamp.elapsed += 0.065;
-            rho = resumeRamp.from + (160 - resumeRamp.from) * smooth(Math.min(resumeRamp.elapsed / 3, 1));
-            if (resumeRamp.elapsed >= 3) resumeRamp = null;
-          } else {
-            cycle = (cycle + 0.065) % 43.875;
-            rho = automaticRho(cycle);
-          }
+          manualUntil = 0;
+          cycle = (cycle + frameStep) % cycleDuration;
+          rho = automaticRho(cycle);
         }
         for (let i = 0; i < 13; i++) {
           state = advance(state, rho);
