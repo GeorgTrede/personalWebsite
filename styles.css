@@ -9,6 +9,18 @@
 
 .thesis-paper{margin-top:24px}
 
+.paper-with-figure{row-gap:18px;grid-template-rows:auto 1fr}
+.paper-with-figure .paper-meta{grid-column:1;grid-row:1}
+.paper-with-figure .paper-body{grid-column:2;grid-row:1 / span 2;min-width:0}
+.paper-figure{grid-column:1;grid-row:2;margin:0;width:100%;align-self:start}
+.figure-preview{display:block;padding:8px;border:1px solid var(--line);border-radius:6px;background:#fff;transition:border-color .2s}
+.figure-preview:hover{border-color:#9cb7c3}
+.figure-preview img{display:block;width:100%;height:auto}
+.figure-preview span{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:12px;font-weight:500;color:var(--blue)}
+.paper-figure figcaption{margin-top:8px;font-size:11px;line-height:1.5;color:var(--muted)}
+@media(max-width:700px){.paper-with-figure{grid-template-rows:auto;row-gap:22px}.paper-with-figure .paper-meta,.paper-with-figure .paper-body,.paper-figure{grid-column:1;grid-row:auto}.paper-figure{max-width:240px}.figure-preview{padding:12px}.figure-preview span{font-size:13px}.paper-figure figcaption{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.figure-preview{transition:none}}
+
 @media(max-width:700px){.text-link{min-height:44px}.lorenz-slider-row button{min-height:44px}.lorenz-slider-row input{min-height:44px;margin:0}.hero-actions .button{min-height:44px}}
 
 @media(min-width:480px) and (max-width:700px){.hero-photo img{object-position:center 35%}}
