@@ -1,6 +1,6 @@
 /* Lorenz equations: sigma = 10, beta = 8/3; RK4 with dt = 0.005.
  * Periodic rho=160 → chaotic rho=180 → recovery, without resetting state.
- * Hold each regime for five seconds, with one-second transitions.
+ * Hold each regime for seven seconds, with one-second transitions.
  * Manual input holds rho for 10 seconds.
  */
 (() => {
@@ -15,7 +15,7 @@
   if (!ctx) return;
   document.querySelector('.lorenz-controls').hidden = false;
   const dt = 0.005, trailLength = 700, manualDelay = 10000;
-  const frameStep = 1 / 25, holdDuration = 5, transitionDuration = 1;
+  const frameStep = 1 / 25, holdDuration = 7, transitionDuration = 1;
   const cycleDuration = 2 * (holdDuration + transitionDuration);
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let state = [1, 1, 1], trail = [], rho = 160, cycle = 0;
@@ -102,7 +102,7 @@
   slider.addEventListener('input', () => {
     rho = Number(slider.value);
     manualUntil = performance.now() + manualDelay;
-    // Return gently to order before starting a fresh five-second hold.
+    // Return gently to order before starting a fresh seven-second hold.
     cycle = 0;
     resumeRamp = null;
     showValue(); refreshControls(performance.now());
