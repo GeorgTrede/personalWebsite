@@ -1,6 +1,6 @@
 /* Lorenz equations: sigma = 10, beta = 8/3; RK4 with dt = 0.005.
  * Periodic rho=160 → chaotic rho=180 → recovery, without resetting state.
- * Five seconds per transition; manual input holds rho for 10 seconds.
+ * Hold each regime for five seconds; manual input holds rho for 10 seconds.
  */
 (() => {
   'use strict';
@@ -14,7 +14,7 @@
   if (!ctx) return;
   document.querySelector('.lorenz-controls').hidden = false;
   const dt = 0.005, trailLength = 700, manualDelay = 10000;
-  const frameStep = 1 / 25, transitionDuration = 5, cycleDuration = 2 * transitionDuration;
+  const frameStep = 1 / 25, holdDuration = 5, cycleDuration = 2 * holdDuration;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let state = [1, 1, 1], trail = [], rho = 160, cycle = 0;
   let running = !reducedMotion.matches, visible = false, last = null;
@@ -36,7 +36,7 @@
     if (i >= 20000 - trailLength) trail.push(state);
   }
   function automaticRho(t) {
-    return 170 - 10 * Math.cos(Math.PI * t / transitionDuration);
+    return t < holdDuration ? 160 : 180;
   }
   function showValue() {
     slider.value = rho.toFixed(1);
@@ -94,9 +94,8 @@
   slider.addEventListener('input', () => {
     rho = Number(slider.value);
     manualUntil = performance.now() + manualDelay;
-    // Match the cycle to the selected value, keeping its direction when it resumes.
-    const phase = Math.acos((170 - rho) / 10) * transitionDuration / Math.PI;
-    cycle = cycle < transitionDuration ? phase : cycleDuration - phase;
+    // Resume with a full periodic phase after the manual hold expires.
+    cycle = 0;
     showValue(); refreshControls(performance.now());
   });
   toggle.addEventListener('click', () => {
